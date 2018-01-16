@@ -19,3 +19,4 @@ Route::resource('comment', 'CommentsController');
 
 /* カテゴリー */
 Route::get('bbc/category/{id}', 'PostsController@showCategory')->name('bbc.showCategory');
+Route::post('comment/delet', 'CommentsController@deletButton')->name('comment.deletButton');

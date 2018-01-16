@@ -40,4 +40,13 @@ class PostsController extends Controller
 
         return redirect()->back()->with('message', '投稿が完了しました。');
     }
+
+
+    public function showCategory($id)
+    {
+        // 引数で渡された$idでカテゴリーごとにデータを取得
+        $category_posts = Post::where('cat_id', $id)->get();
+        // 結果をビューに送る
+        return view('bbc.category')->with('category_posts', $category_posts);
+    }
 }

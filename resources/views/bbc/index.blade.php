@@ -2,7 +2,10 @@
 @section('content')
 
     <div class="col-xs-8 col-xs-offset-2">
-
+        <br/>
+        <h3>
+            <p>投稿ページ：{{ link_to("/bbc/create/", '投稿する', array('class' => '')) }}</p>
+        </h3>
         @foreach($posts as $post)
 
             <h2>タイトル：{{ $post->title }}

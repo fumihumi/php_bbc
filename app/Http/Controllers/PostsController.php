@@ -15,4 +15,9 @@ class PostsController extends Controller
         // 結果をビューに送る
         return View('bbc.index')->with('posts', $posts);
     }
+
+    public function show($id){
+        $post = Post::find($id);
+        return view('bbc.single')->with('post',$post);
+    }
 }

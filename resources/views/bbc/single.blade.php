@@ -49,6 +49,7 @@
 
         <div class="form-group">
             <button type="submit" class="btn btn-primary">投稿する</button>
+            <a class="btn btn-default" href="#" onClick="history.back(); return false;">戻る</a>
         </div>
 
 

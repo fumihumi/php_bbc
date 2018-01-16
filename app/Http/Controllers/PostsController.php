@@ -12,7 +12,7 @@ class PostsController extends Controller
     public function index()
     {
         // postsテーブルの全データを取得
-        $posts = Post::all();
+        $posts = Post::paginate(10);
         // 結果をビューに送る
         return View('bbc.index')->with('posts', $posts);
     }

@@ -17,7 +17,7 @@
             <p>コメント数：{{ $post->comment_count }}</p>
             <hr />
         @endforeach
-
+        {{ $posts->links() }}
     </div>
 
 @endsection

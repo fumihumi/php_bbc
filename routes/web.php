@@ -17,3 +17,5 @@ Route::resource('bbc', 'PostsController');
 
 /* 投稿ページ */
 //Route::get('bbc/create','PostsController@create')->name('bbc.create');
+
+Route::get('bbc/category/{id}', 'PostsController@showCategory')->name('bbc.showCategory');

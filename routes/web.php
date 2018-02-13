@@ -2,7 +2,7 @@
 
 /* デフォルト */
 Route::get('/', function () {
-    return view('welcome');
+    return view('PostsController@index');
 });
 
 /* 掲示板一覧 */
@@ -20,3 +20,6 @@ Route::resource('comment', 'CommentsController');
 /* カテゴリー */
 Route::get('bbc/category/{id}', 'PostsController@showCategory')->name('bbc.showCategory');
 Route::post('comment/delet', 'CommentsController@deletButton')->name('comment.deletButton');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

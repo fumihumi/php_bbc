@@ -16,7 +16,7 @@
 
                     {!! Form::open(['route' => 'post.deletButton'], array('class' => 'form')) !!}
                     <div class="form-group">
-                        <button id="delet-button" name="id" value="{{ $post->id }}" class="btn btn-defalt">削除</button><br />
+                        <button id="delet-button" name="seqno" value="{{ $post->seqno }}" class="btn btn-defalt">削除</button><br />
                     </div>
                     {!! Form::close() !!}
                 </ol>

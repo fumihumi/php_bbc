@@ -14,7 +14,7 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         // postsテーブルの全データを取得
@@ -55,8 +55,9 @@ class PostsController extends Controller
     {
         if($request != NULL or $request != "") {
 //            $id = explode(',', $request->input('id'));
-            $id = $request['id'];
-            Post::where('id', (int)$id)->delete();
+
+            $id = $request['seqno'];
+            Post::where('seqno', (int)$id)->delete();
             return redirect()->back()->with('message', '投稿を削除しました。');
         }
 

@@ -1,9 +1,12 @@
 <?php
 
 /* デフォルト */
-Route::get('/', function () {
-    return view('PostsController@index');
-});
+//Route::get('/', function () {
+//    return view('PostsController@index');
+//});
+
+Route::get('/', 'PostsController@index');
+
 
 /* 掲示板一覧 */
 //Route::get('bbc','PostsController@index')->name('bbc.index');

@@ -15,7 +15,6 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('post_id'); // ポストテーブルとコメントテーブルの紐付けに利用します
             $table->string('commenter');
             $table->text('comment');
             $table->timestamps();

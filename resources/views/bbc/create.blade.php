@@ -20,27 +20,9 @@
         {!! Form::open(['route' => 'bbc.store'], array('class' => 'form')) !!}
 
         <div class="form-group">
-            <label for="title" class="">タイトル</label>
+            <label for="msg" class="">message</label>
             <div class="">
-                {!! Form::text('title', null, array('class' => '')) !!}
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="cat_id" class="">カテゴリー</label>
-            <div class="">
-                <select name="cat_id" type="text" class="">
-                    <option></option>
-                    <option value="1" name="1">電化製品</option>
-                    <option value="2" name="2">食品</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="content" class="">本文</label>
-            <div class="">
-                {!! Form::textarea('content', null, array('class' => '')) !!}
+                {!! Form::text('msg', null, array('class' => '')) !!}
             </div>
         </div>
 

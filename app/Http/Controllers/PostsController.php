@@ -9,10 +9,16 @@ use View;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         // postsテーブルの全データを取得
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(30);
         // 結果をビューに送る
         return View('bbc.index')->with('posts', $posts);
     }
@@ -31,22 +37,28 @@ class PostsController extends Controller
         /**
          * 投稿した内容を登録
          */
-        $post = new Post;
-        $post->title   = $request->get('title');
-        $post->content = $request->get('content');
-        $post->cat_id  = $request->get('cat_id');
-        $post->comment_count = 0;
-        $post->save();
 
-        return redirect()->back()->with('message', '投稿が完了しました。');
+        $username = \Auth::user()->name;
+        $userid = \Auth::user()->id;
+        $post = new Post;
+        $post->msg = $request->get('msg');
+        $post->user_name =  $username;
+        $post->user_id = $userid;
+        $post->save();
+        $posts = Post::paginate(30);
+        $message =  '投稿が完了しました。';
+        return View('bbc.index',compact('posts', 'message'));
+
     }
 
-
-    public function showCategory($id)
+    public function deletbutton(Request $request)
     {
-        // 引数で渡された$idでカテゴリーごとにデータを取得
-        $category_posts = Post::where('cat_id', $id)->get();
-        // 結果をビューに送る
-        return view('bbc.category')->with('category_posts', $category_posts);
+        if($request != NULL or $request != "") {
+//            $id = explode(',', $request->input('id'));
+            $id = $request['id'];
+            Post::where('id', (int)$id)->delete();
+            return redirect()->back()->with('message', '投稿を削除しました。');
+        }
+
     }
 }

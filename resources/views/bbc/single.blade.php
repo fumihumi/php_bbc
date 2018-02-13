@@ -15,7 +15,6 @@
         <h2>タイトル：{{ $post->title }}
             <small>s：{{ date("Y年 m月 d日", strtotime($post->created_at)) }}</small>
         </h2>
-        <p>カテゴリー：{{ $post->category->name }}</p>
         <p>{{ $post->content }}</p>
 
         <hr />

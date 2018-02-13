@@ -14,17 +14,13 @@ class PostStoreRequest extends FormRequest
 
     public function rules() {
         return [
-            'title' => 'required',
-            'content' => 'required',
-            'cat_id' => 'required'
+            'msg' => 'required',
         ];
     }
 
     public function messages() {
         return [
-            'title.required' => 'タイトルを正しく入力してください。',
-            'content.required' => '本文を正しく入力してください。',
-            'cat_id.required' => 'カテゴリーを選択してください。',
+            'msg.required' => 'Messageを正しく入力してください。',
         ];
     }
 

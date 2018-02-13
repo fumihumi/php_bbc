@@ -20,9 +20,5 @@ Route::resource('bbc', 'PostsController');
 
 Route::resource('comment', 'CommentsController');
 
-/* カテゴリー */
-Route::get('bbc/category/{id}', 'PostsController@showCategory')->name('bbc.showCategory');
-Route::post('comment/delet', 'CommentsController@deletButton')->name('comment.deletButton');
+Route::post('post/delet', 'PostsController@deletButton')->name('post.deletButton');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

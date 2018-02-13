@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 @section('content')
 
     <div class="col-xs-8 col-xs-offset-2">
@@ -6,7 +6,7 @@
             戻るボタン：<a class="btn btn-default" href="#" onClick="history.back(); return false;">戻る</a>
         </h3>
         @foreach($category_posts as $category_post)
-            <h2>タイトル：{{ $category_post->title }}
+            <h2>タイトル：{{ $category_post->msg }}
                 <small>投稿日：{{ date("Y年 m月 d日",strtotime($category_post->created_at)) }}</small>
             </h2>
 
@@ -19,4 +19,4 @@
 
     </div>
 
-@endsection
+@endsection -->

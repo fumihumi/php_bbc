@@ -14,11 +14,11 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('cat_id');
-            $table->text('content');
-            $table->unsignedInteger('comment_count');
+            $table->increments('seqno');
+            $table->string('msg');
+            $table->text('user_name');
+            // $table->string('id');  idだと本テーブルのオートインクリカラムに似ているため変更
+            $table->string('user_id');
             $table->timestamps();
             $table->softDeletes();
         });

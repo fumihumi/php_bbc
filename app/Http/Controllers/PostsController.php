@@ -54,11 +54,14 @@ class PostsController extends Controller
     public function deletbutton(Request $request)
     {
         if($request != NULL or $request != "") {
-//            $id = explode(',', $request->input('id'));
 
             $id = $request['seqno'];
-            Post::where('seqno', (int)$id)->delete();
-            return redirect()->back()->with('message', '投稿を削除しました。');
+            $post = Post::where('seqno', (int)$id);
+//            if ($post->user_name == \Auth::user()->name){
+                $post->delete();
+                return redirect()->back()->with('message', '投稿を削除しました。');
+//            }
+
         }
 
     }
